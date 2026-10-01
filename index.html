@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ravi Verma - Telegram Channel</title>
+    <title>Ravi Verma - Official Telegram Channel</title>
 
     <style>
         * {
@@ -14,48 +14,101 @@
         }
 
         body {
-            background-color: #0f1115;
+            background-color: #0a0c10;
+            background-image: 
+                radial-gradient(circle at 20% 20%, rgba(255, 184, 0, 0.12) 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(0, 136, 204, 0.15) 0%, transparent 40%);
             color: #ffffff;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 20px 15px;
+            padding: 25px 15px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Ambient Glow Background Effect */
+        .bg-glow {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, rgba(255, 180, 0, 0.25), rgba(0, 136, 204, 0.25));
+            filter: blur(90px);
+            border-radius: 50%;
+            z-index: 0;
+            pointer-events: none;
         }
 
         .container {
+            position: relative;
+            z-index: 1;
             width: 100%;
-            max-width: 540px;
-            background-color: #14161d;
-            border-radius: 26px;
-            padding: 44px 32px;
+            max-width: 520px;
+            background: rgba(18, 20, 29, 0.92);
+            backdrop-filter: blur(16px);
+            border-radius: 28px;
+            padding: 40px 28px;
             text-align: center;
-            box-shadow: 0 12px 40px rgba(0,0,0,0.6);
-            border: 1px solid #222630;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 1px 1px rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
 
-        /* Profile Logo Container */
-        .logo-container {
+        /* Live Indicator Badge */
+        .live-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 77, 77, 0.12);
+            border: 1px solid rgba(255, 77, 77, 0.3);
+            color: #ff4d4d;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 22px;
+            letter-spacing: 0.5px;
+        }
+
+        .pulse-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #ff4d4d;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #ff4d4d;
+            animation: blink 1.4s infinite ease-in-out;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(0.85); }
+        }
+
+        /* Profile Logo Container with Gradient Ring */
+        .logo-wrapper {
             position: relative;
-            width: 145px;
-            height: 145px;
-            margin: 0 auto 24px auto;
+            width: 135px;
+            height: 135px;
+            margin: 0 auto 22px auto;
+            border-radius: 26px;
+            padding: 3px;
+            background: linear-gradient(135deg, #ffc700, #0088cc);
+            box-shadow: 0 10px 25px rgba(0, 136, 204, 0.3);
         }
 
         .logo-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 22px;
-            background-color: #ffffff;
-            padding: 8px;
+            border-radius: 23px;
+            background-color: #12141d;
         }
 
         .verified-badge {
             position: absolute;
-            bottom: -4px;
-            right: -4px;
-            background-color: #0088cc;
+            bottom: -6px;
+            right: -6px;
+            background: linear-gradient(135deg, #0088cc, #005580);
             color: white;
             border-radius: 50%;
             width: 32px;
@@ -63,136 +116,232 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 2px solid #14161d;
-            font-size: 17px;
+            border: 3px solid #12141d;
+            font-size: 16px;
             font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
         }
 
-        /* Main Heading */
+        /* Title & Tagline */
         .title {
             font-size: 28px;
             font-weight: 800;
-            margin-bottom: 20px;
+            margin-bottom: 6px;
             color: #ffffff;
-            display: flex;
+            letter-spacing: -0.3px;
+        }
+
+        .sub-tagline {
+            color: #a0a6b8;
+            font-size: 14px;
+            margin-bottom: 18px;
+            font-weight: 500;
+        }
+
+        /* Rating Stars */
+        .rating-box {
+            display: inline-flex;
             align-items: center;
-            justify-content: center;
-            gap: 10px;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #ffd700;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
+
+        .rating-box span {
+            color: #d1d5db;
         }
 
         /* Pill Badge */
         .badge-pill {
-            background-color: #1e1e0a;
-            border: 1px solid #554400;
-            color: #ffcc00;
-            padding: 12px 22px;
+            background: linear-gradient(135deg, rgba(255, 199, 0, 0.15), rgba(255, 153, 0, 0.08));
+            border: 1px solid rgba(255, 199, 0, 0.4);
+            color: #ffc700;
+            padding: 10px 20px;
             border-radius: 30px;
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 700;
             display: inline-block;
             margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(255, 199, 0, 0.1);
         }
 
-        /* Timer Text */
-        .timer-text {
-            color: #ff4d4d;
-            font-size: 16px;
-            font-weight: 700;
+        /* Timer Box */
+        .timer-box {
+            background: rgba(255, 77, 77, 0.08);
+            border: 1px dashed rgba(255, 77, 77, 0.4);
+            border-radius: 14px;
+            padding: 12px 18px;
             margin-bottom: 24px;
+            color: #ff6b6b;
+            font-size: 15px;
+            font-weight: 700;
         }
 
-        /* Animated CTA Button with Glow & Pulse Effect */
+        .timer-box span {
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: 800;
+            background: #ff4d4d;
+            padding: 3px 10px;
+            border-radius: 6px;
+            margin-left: 6px;
+        }
+
+        /* Shimmer Animated CTA Button */
         .btn-cta {
+            position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
-            background: linear-gradient(180deg, #ffc700 0%, #ff9900 100%);
+            background: linear-gradient(135deg, #ffc700 0%, #ff9900 100%);
             color: #000000;
             text-decoration: none;
             font-weight: 800;
             font-size: 18px;
-            padding: 20px 28px;
-            border-radius: 36px;
-            margin-bottom: 30px;
+            padding: 18px 24px;
+            border-radius: 35px;
+            margin-bottom: 10px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            
-            /* Dynamic Animation Setup */
-            animation: pulseGlow 2s infinite ease-in-out;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(255, 184, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.2) inset;
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            animation: pulseGlow 2.2s infinite ease-in-out;
         }
 
-        /* Hover & Active State */
-        .btn-cta:hover {
-            transform: scale(1.04);
-            background: linear-gradient(180deg, #ffe066 0%, #ffaa00 100%);
-            box-shadow: 0 0 25px rgba(255, 180, 0, 0.9), 0 0 10px rgba(255, 255, 255, 0.5);
+        /* Shimmer Light Effect */
+        .btn-cta::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -60%;
+            width: 50%;
+            height: 200%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.45),
+                transparent
+            );
+            transform: rotate(30deg);
+            animation: shimmer 2.5s infinite;
         }
 
-        .btn-cta:active {
-            transform: scale(0.98);
+        @keyframes shimmer {
+            0% { left: -60%; }
+            100% { left: 140%; }
         }
 
-        /* Continuous Pulse Animation */
         @keyframes pulseGlow {
-            0% {
+            0%, 100% {
                 transform: scale(1);
-                box-shadow: 0 0 12px rgba(255, 153, 0, 0.5);
+                box-shadow: 0 8px 25px rgba(255, 184, 0, 0.4);
             }
             50% {
                 transform: scale(1.03);
-                box-shadow: 0 0 22px rgba(255, 175, 0, 0.85);
+                box-shadow: 0 12px 35px rgba(255, 184, 0, 0.7);
             }
-            100% {
-                transform: scale(1);
-                box-shadow: 0 0 12px rgba(255, 153, 0, 0.5);
-            }
+        }
+
+        .btn-cta:hover {
+            transform: scale(1.04);
+            background: linear-gradient(135deg, #ffd433 0%, #ffaa00 100%);
+        }
+
+        .cta-subtext {
+            font-size: 12px;
+            color: #8c94a6;
+            margin-bottom: 26px;
+            font-weight: 500;
         }
 
         /* Feature Grid */
         .features-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 16px;
-            margin-bottom: 30px;
+            gap: 14px;
+            margin-bottom: 26px;
         }
 
         .feature-card {
-            background-color: #1c1f26;
-            border: 1px solid #2a2e39;
-            border-radius: 18px;
-            padding: 18px 14px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 16px 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 600;
-            color: #e0e0e0;
-            min-height: 68px;
+            color: #e2e8f0;
+            min-height: 64px;
+            transition: all 0.3s ease;
         }
 
-        /* Stats Pill */
-        .stats-pill {
-            background-color: #241c0c;
-            border: 1px solid #664d00;
-            color: #ffcc00;
-            padding: 15px 24px;
+        .feature-card:hover {
+            background: rgba(255, 255, 255, 0.07);
+            border-color: rgba(255, 199, 0, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Stats Banner */
+        .stats-banner {
+            background: linear-gradient(135deg, rgba(0, 136, 204, 0.15), rgba(0, 85, 128, 0.08));
+            border: 1px solid rgba(0, 136, 204, 0.3);
+            color: #66c2ff;
+            padding: 14px 20px;
             border-radius: 30px;
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 700;
-            margin-bottom: 30px;
+            margin-bottom: 26px;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
+        }
+
+        /* Key Benefits Checklist */
+        .benefits-list {
+            text-align: left;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 18px;
+            padding: 18px 20px;
+            margin-bottom: 26px;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 13px;
+            color: #cbd5e1;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .benefit-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .benefit-icon {
+            color: #ffc700;
+            font-weight: bold;
+            font-size: 15px;
         }
 
         /* Disclaimer Footer */
         .disclaimer {
-            font-size: 12px;
-            color: #777e90;
+            font-size: 11px;
+            color: #64748b;
             line-height: 1.6;
             padding: 0 10px;
         }
@@ -200,59 +349,90 @@
 </head>
 <body>
 
+    <div class="bg-glow"></div>
+
     <div class="container">
-        <!-- Profile / Logo Container -->
-        <div class="logo-container">
+
+        <!-- Live Pulse Indicator -->
+        <div class="live-badge">
+            <div class="pulse-dot"></div>
+            LIVE • 1,480+ Traders Active Today
+        </div>
+
+        <!-- Profile Logo Container with Gradient Aura -->
+        <div class="logo-wrapper">
             <img src="logo.png" alt="Ravi Verma Profile Logo" class="logo-img">
             <div class="verified-badge">✓</div>
         </div>
 
-        <!-- Main Heading -->
+        <!-- Main Title & Tagline -->
         <h1 class="title">👑 Ravi Verma 👑</h1>
+        <p class="sub-tagline">Stock Market Analyst & Options Trading Specialist</p>
+
+        <!-- Social Proof Rating -->
+        <div class="rating-box">
+            ⭐⭐⭐⭐⭐ 4.9/5 <span>(12,500+ Active Members)</span>
+        </div>
 
         <!-- Accuracy Badge Pill -->
-        <div class="badge-pill">
-            ⚡ 95% High Accuracy | SEBI Guide Aware
+        <div>
+            <div class="badge-pill">
+                ⚡ 95%+ High Accuracy | SEBI Guidelines Aware
+            </div>
         </div>
 
-        <!-- Countdown Timer -->
-        <div class="timer-text">
-            ⏳ Free Invite Link Expires In: <span id="timer">03:39</span>
+        <!-- Countdown Urgency Box -->
+        <div class="timer-box">
+            ⏳ VIP Invite Link Expires In: <span id="timer">03:39</span>
         </div>
 
-        <!-- Animated Join Telegram CTA -->
+        <!-- Shimmering Call to Action Button -->
         <a href="#" target="_blank" class="btn-cta">
             🚀 JOIN FREE TELEGRAM CHANNEL
         </a>
+        <p class="cta-subtext">🔒 100% Free VIP Access • No Subscription Fee Required</p>
 
-        <!-- Feature Grid -->
+        <!-- Features Grid -->
         <div class="features-grid">
             <div class="feature-card">
-                📊 Daily Market Analysis
+                📊 Pre-Market Analysis
             </div>
             <div class="feature-card">
                 💎 High Accuracy Signals
             </div>
             <div class="feature-card">
-                ⚡ Intraday Nifty / BankNifty
+                ⚡ Nifty / BankNifty Calls
             </div>
             <div class="feature-card">
                 📚 14+ Yrs Trading Exp.
             </div>
         </div>
 
+        <!-- Benefits Checklist -->
+        <div class="benefits-list">
+            <div class="benefit-item">
+                <span class="benefit-icon">✔</span> Daily Live Market Levels & Key Breakout Updates
+            </div>
+            <div class="benefit-item">
+                <span class="benefit-icon">✔</span> Real-Time Entry & Target Updates on Telegram
+            </div>
+            <div class="benefit-item">
+                <span class="benefit-icon">✔</span> Risk Management & Capital Protection Strategies
+            </div>
+        </div>
+
         <!-- Active Join Counter Pill -->
-        <div class="stats-pill">
-            🔥 1,000+ Active Traders Joined Today
+        <div class="stats-banner">
+            🔥 10,000+ Traders Already Benefiting Daily
         </div>
 
         <!-- Disclaimer -->
         <p class="disclaimer">
-            Disclaimer: This channel is strictly for educational and informational purposes only. Options trading involves risk. Please consult your financial advisor before trading.
+            Disclaimer: This Telegram channel is strictly for educational and informational purposes only. Stock market & options trading involve financial risk. Please consult your certified financial advisor before making any investment decisions.
         </p>
     </div>
 
-    <!-- Dynamic Countdown Timer JS -->
+    <!-- Countdown Timer JS -->
     <script>
         function startTimer(duration, display) {
             let timer = duration, minutes, seconds;
@@ -272,7 +452,7 @@
         }
 
         window.onload = function () {
-            let initialTime = 60 * 3 + 39; // 3 min 39 sec countdown
+            let initialTime = 60 * 3 + 39; // 3 min 39 sec
             let display = document.querySelector('#timer');
             startTimer(initialTime, display);
         };
