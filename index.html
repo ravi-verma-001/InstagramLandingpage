@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ravi Verma - Telegram Channel</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #0f1115;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px 15px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 540px;
+            background-color: #14161d;
+            border-radius: 26px;
+            padding: 44px 32px;
+            text-align: center;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+            border: 1px solid #222630;
+        }
+
+        /* Profile Logo Container */
+        .logo-container {
+            position: relative;
+            width: 145px;
+            height: 145px;
+            margin: 0 auto 24px auto;
+        }
+
+        .logo-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 22px;
+            background-color: #ffffff;
+            padding: 8px;
+        }
+
+        .verified-badge {
+            position: absolute;
+            bottom: -4px;
+            right: -4px;
+            background-color: #0088cc;
+            color: white;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #14161d;
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+        /* Main Heading */
+        .title {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        /* Pill Badge */
+        .badge-pill {
+            background-color: #1e1e0a;
+            border: 1px solid #554400;
+            color: #ffcc00;
+            padding: 12px 22px;
+            border-radius: 30px;
+            font-size: 15px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        /* Timer Text */
+        .timer-text {
+            color: #ff4d4d;
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+
+        /* Animated CTA Button with Glow & Pulse Effect */
+        .btn-cta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: linear-gradient(180deg, #ffc700 0%, #ff9900 100%);
+            color: #000000;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 18px;
+            padding: 20px 28px;
+            border-radius: 36px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            
+            /* Dynamic Animation Setup */
+            animation: pulseGlow 2s infinite ease-in-out;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        /* Hover & Active State */
+        .btn-cta:hover {
+            transform: scale(1.04);
+            background: linear-gradient(180deg, #ffe066 0%, #ffaa00 100%);
+            box-shadow: 0 0 25px rgba(255, 180, 0, 0.9), 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        .btn-cta:active {
+            transform: scale(0.98);
+        }
+
+        /* Continuous Pulse Animation */
+        @keyframes pulseGlow {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 12px rgba(255, 153, 0, 0.5);
+            }
+            50% {
+                transform: scale(1.03);
+                box-shadow: 0 0 22px rgba(255, 175, 0, 0.85);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 12px rgba(255, 153, 0, 0.5);
+            }
+        }
+
+        /* Feature Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 30px;
+        }
+
+        .feature-card {
+            background-color: #1c1f26;
+            border: 1px solid #2a2e39;
+            border-radius: 18px;
+            padding: 18px 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 15px;
+            font-weight: 600;
+            color: #e0e0e0;
+            min-height: 68px;
+        }
+
+        /* Stats Pill */
+        .stats-pill {
+            background-color: #241c0c;
+            border: 1px solid #664d00;
+            color: #ffcc00;
+            padding: 15px 24px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        /* Disclaimer Footer */
+        .disclaimer {
+            font-size: 12px;
+            color: #777e90;
+            line-height: 1.6;
+            padding: 0 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Profile / Logo Container -->
+        <div class="logo-container">
+            <img src="logo.png" alt="Ravi Verma Profile Logo" class="logo-img">
+            <div class="verified-badge">✓</div>
+        </div>
+
+        <!-- Main Heading -->
+        <h1 class="title">👑 Ravi Verma 👑</h1>
+
+        <!-- Accuracy Badge Pill -->
+        <div class="badge-pill">
+            ⚡ 95% High Accuracy | SEBI Guide Aware
+        </div>
+
+        <!-- Countdown Timer -->
+        <div class="timer-text">
+            ⏳ Free Invite Link Expires In: <span id="timer">03:39</span>
+        </div>
+
+        <!-- Animated Join Telegram CTA -->
+        <a href="#" target="_blank" class="btn-cta">
+            🚀 JOIN FREE TELEGRAM CHANNEL
+        </a>
+
+        <!-- Feature Grid -->
+        <div class="features-grid">
+            <div class="feature-card">
+                📊 Daily Market Analysis
+            </div>
+            <div class="feature-card">
+                💎 High Accuracy Signals
+            </div>
+            <div class="feature-card">
+                ⚡ Intraday Nifty / BankNifty
+            </div>
+            <div class="feature-card">
+                📚 14+ Yrs Trading Exp.
+            </div>
+        </div>
+
+        <!-- Active Join Counter Pill -->
+        <div class="stats-pill">
+            🔥 1,000+ Active Traders Joined Today
+        </div>
+
+        <!-- Disclaimer -->
+        <p class="disclaimer">
+            Disclaimer: This channel is strictly for educational and informational purposes only. Options trading involves risk. Please consult your financial advisor before trading.
+        </p>
+    </div>
+
+    <!-- Dynamic Countdown Timer JS -->
+    <script>
+        function startTimer(duration, display) {
+            let timer = duration, minutes, seconds;
+            setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    timer = duration;
+                }
+            }, 1000);
+        }
+
+        window.onload = function () {
+            let initialTime = 60 * 3 + 39; // 3 min 39 sec countdown
+            let display = document.querySelector('#timer');
+            startTimer(initialTime, display);
+        };
+    </script>
+</body>
+</html>
